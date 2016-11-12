@@ -1,0 +1,11 @@
+.gallery-row{
+    width:350px !important;
+    height:300px;
+    transition: width .2s, height .2s;
+    transition-timing-function: ease-in;
+    transition-delay: .4s;
+}
+.gallery-row:hover{
+    width:450px !important;
+    height:400px;
+}
