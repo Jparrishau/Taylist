@@ -4,7 +4,6 @@
   <!-- Modal content -->
   <div class="modal-content">
   <div class="modal-header">Add Post</div>
-     <form class="form-horizontal margin-top-15" enctype="multipart/form-data" role="form" method="POST" action="{{ route('add-post') }}">
         {{ csrf_field() }}
         
         <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
