@@ -49,6 +49,7 @@
                 </button>
             </div>
         </div>
+          <input id="category" name="category" type="hidden" value="1">
     </form>
   </div>
 </div>
