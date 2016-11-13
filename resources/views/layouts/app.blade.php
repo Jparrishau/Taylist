@@ -20,7 +20,9 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/helpers.css" rel="stylesheet">
     <link href="/css/app.css" rel="stylesheet">
-
+    
+    <!-- Custom CSS -->
+    @yield('css')
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
@@ -82,6 +84,11 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
+                                            <a href="#">
+                                               <i class="fa fa-user" aria-hidden="true"></i> Account
+                                            </a>
+                                    </li>
+                                    <li>
                                         <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -104,7 +111,13 @@
     </div>
 
     <!-- Scripts -->
+    <script
+          src="https://code.jquery.com/jquery-3.1.1.js"
+          integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+          crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="/js/app.js"></script>
+    
+    @yield('js');
 </body>
 </html>
