@@ -57,7 +57,7 @@
                               <ul class="dropdown-menu" role="menu">
                               <div class="dropdown-header"> Category</div>
                                 <li>
-                                    <a href=" {{ route('gallery') }}">Furniture</a>
+                                    <a href=" {{ url('gallery/1') }}">Furniture</a>
                                 </li>
                               </ul>
                         </li>
@@ -111,12 +111,8 @@
     </div>
 
     <!-- Scripts -->
-    <script
-          src="https://code.jquery.com/jquery-3.1.1.js"
-          integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
-          crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="/js/app.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/js/app.js"></script>
     
     @yield('js');
 </body>

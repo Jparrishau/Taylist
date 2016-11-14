@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Category;
 use Illuminate\Http\Request;
 
 class GalleryController extends Controller
@@ -22,14 +23,11 @@ class GalleryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function createGallery()
+    public function createGallery($category)
     {
-        $posts = Post::with('photos')->get();
-        
-        /*$content = json_decode($posts, true);
-        var_dump($content[0]);
-        exit();*/
-        
+        $posts = Post::with('photos')
+            ->where('category_id', $category)->get();
+     
         return view('gallery', ['posts' => $posts]);
     }
 }

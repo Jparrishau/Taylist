@@ -19,6 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@createHome')->name('home');
 
-Route::get('/gallery', 'GalleryController@createGallery')->name('gallery');
+Route::get('/gallery/{category}', 'GalleryController@createGallery')->name('gallery');
 
 Route::post('/add-post', 'PostController@createPost')->name('add-post');
