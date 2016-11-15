@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'Unknown') }}</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ asset('img/favicon.png') }}" >
+    <link rel="shortcut icon" href="{{ asset('favicon.png') }}" >
     
      <!-- Icons -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -57,7 +57,10 @@
                               <ul class="dropdown-menu" role="menu">
                               <div class="dropdown-header"> Category</div>
                                 <li>
-                                    <a href=" {{ url('gallery/1') }}">Furniture</a>
+                                    <a href=" {{ url('gallery/furniture') }}">Furniture</a>
+                                </li>
+                                <li>
+                                    <a href=" {{ url('gallery/electronics') }}">Electronics</a>
                                 </li>
                               </ul>
                         </li>
@@ -111,9 +114,13 @@
     </div>
 
     <!-- Scripts -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="/js/app.js"></script>
-    
+<script
+    src="https://code.jquery.com/jquery-3.1.1.js"
+    integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+    crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     @yield('js');
 </body>
 </html>
