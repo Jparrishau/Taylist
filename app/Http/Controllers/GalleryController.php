@@ -26,8 +26,8 @@ class GalleryController extends Controller
     public function createGallery($category)
     {
         $posts = Post::with('photos')
-            ->where('category_id', $category)->get();
+            ->where('category', $category)->get();
      
-        return view('gallery', ['posts' => $posts]);
+        return view('gallery', ['category' => $category, 'posts' => $posts]);
     }
 }

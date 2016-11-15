@@ -1,5 +1,5 @@
 <!-- The Modal -->
-<div id="addPostModal" class="add-post-modal">
+<div id="addPostModal" class="add-post-modal fade">
 
   <!-- Modal content -->
   <div class="modal-content">
@@ -49,7 +49,7 @@
                 </button>
             </div>
         </div>
-          <input id="category" name="category" type="hidden" value="1">
+          <input id="category" name="category" type="hidden" value="{{$category}}">
     </form>
   </div>
 </div>
