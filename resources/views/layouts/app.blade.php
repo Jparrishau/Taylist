@@ -30,7 +30,7 @@
         ]); ?>
     </script>
 </head>
-<body>
+<body style="min-width:391px !important;">
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container-fluid" style="margin:0 15px;">
@@ -48,23 +48,25 @@
                     <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a
-                        
+                    @if(Auth::check())    
                      <ul class="nav navbar-nav navbar-left">
                         <li class="dropdown navbar-brand list-unstyled">
                           <a href="{{ url('/') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="color: #5e5e5e; margin-left:100px;">
                             Browse <span class="caret"></span>
                           </a>
+                            
                               <ul class="dropdown-menu" role="menu">
-                              <div class="dropdown-header"> Category</div>
-                                <li>
-                                    <a href=" {{ url('gallery/furniture') }}">Furniture</a>
-                                </li>
-                                <li>
-                                    <a href=" {{ url('gallery/electronics') }}">Electronics</a>
-                                </li>
+                                <div class="dropdown-header"> Category</div>
+                                    <li>
+                                        <a href=" {{ url('gallery/furniture') }}">Furniture</a>
+                                    </li>
+                                    <li>
+                                        <a href=" {{ url('gallery/electronics') }}">Electronics</a>
+                                    </li>
                               </ul>
                         </li>
                      </ul>
+                     @endif
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -75,6 +77,31 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
+                    <!-- Notification Links -->
+                        @if (Auth::check())  
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    <i class="fa fa-bell fa-2x" aria-hidden="true"></i>
+                                </a>
+                    
+                                <ul class="dropdown-menu" role="menu">
+                                @if(count(Auth::user()->unreadNotifications) > 0)
+                                    @foreach(Auth::user()->unreadNotifications as $notification)
+                                        <li>
+                                            <a href="#" style="padding: 30px 20px;" data-notif-id="{{$notification->id}}">
+                                                {{ $notification->data['message'] }}
+                                            </a>
+                                        </li>
+                                    @endforeach
+                                @else
+                                    <p style="padding: 30px 20px;">No new notifications.</p>
+                                @endif
+                                </ul>
+                            </li>
+                        @endif
+                        
+                       
+                      
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ url('/login') }}"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
@@ -86,6 +113,11 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                            <a href="#">
+                                               <i class="fa fa-user" aria-hidden="true"></i> Messages
+                                            </a>
+                                    </li>
                                     <li>
                                             <a href="#">
                                                <i class="fa fa-user" aria-hidden="true"></i> Account
