@@ -3,42 +3,40 @@
  *  Post Detail Modal
  *
 */
+$('#postDetailModal').on('show.bs.modal', function (event) {
+    // Get the button that opens the modal
+    var postDetailBtn = $(event.relatedTarget);
+    
+    //Grab POST data
+    var data = postDetailBtn.data('post');
+    console.log(data.id);
+    
+    new Vue({
+        el: '#vueid',
+         data: {
+            data: data
+        }  
+    });
+});
 
-// Get the modal
-var postDetailModal = document.getElementById('postDetailModal');
-
-// Get the button that opens the modal
-var postDetailBtn = document.getElementById('postDetailModalBtn');
-// When the user clicks on the button, open the modal
-postDetailBtn.onclick = function() {
-    postDetailModal.style.display = "block";
-};
+$('#postDetailModal').on('hidden.bs.modal', function () {
+    $(this).removeData('bs.modal');
+});
 
 /*
  *
  *  Add Post Modal
  *
  */
-
-// Get the modal
-var addPostModal = document.getElementById('addPostModal');
-
-// Get the button that opens the modal
-var addPostBtn = document.getElementById('addPostModalBtn');
-
-// When the user clicks on the button, open the modal
-addPostBtn.onclick = function() {
-    addPostModal.style.display = "block";
-};
-
-/*
- *
- *  Close Modals
- *
- */
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == addPostModal || event.target == postDetailModal) {
-        event.target.style.display = "none";
-    }
-};
+$('#addPostModal').on('show.bs.modal', function (event) {
+    // Get the button that opens the modal
+    var addPostBtn = $(event.relatedTarget);
+    
+    // Get the modal
+    var addPostModal = $(this);
+    
+    // When the user clicks on the button, open the modal
+    addPostBtn.onclick = function() {
+        addPostModal.style.display = "block";
+    };
+});
