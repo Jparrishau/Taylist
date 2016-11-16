@@ -114,8 +114,8 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                            <a href="#">
-                                               <i class="fa fa-user" aria-hidden="true"></i> Messages
+                                            <a href="{{route('messages')}}">
+                                               <i class="fa fa-comments" aria-hidden="true"></i> Messages
                                             </a>
                                     </li>
                                     <li>
@@ -153,6 +153,6 @@
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    @yield('js');
+    @yield('js')
 </body>
 </html>
