@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('css')
-<link href="{{ asset('css/gallery/modals.css') }}" rel="stylesheet">
-<link href="{{ asset('css/gallery/gallery.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/gallery/modals.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/gallery/gallery.css') }}" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -23,11 +23,12 @@
                         @if(count($posts) > 0)
                             @foreach($posts as $post)
                                 <div class="gallery-row col-lg-3 col-md-4 col-sm-6">
-                                    <a href="#postDetailModal" id="postDetailModalBtn" data-toggle="modal" data-post="{{$post}}" >
+                                    <a href="#postDetailModal-{{$post->id}}" data-toggle="modal" data-post="{{$post}}" >
                                         <img class="gallery-img" src="{{ asset('img/gallery/' . $category . '/' . $post->photos[0]->photo_path) }}"
                                         alt="Couch" style="width:100%; height:100%;">
                                     </a>
                                 </div>
+                            @include('gallery/detail_modal')
                             @endforeach
                         @else
                             <!-- No posts exist. Give notice.-->
@@ -41,12 +42,9 @@
 </div>
     
 <!-- Modal Includes -->
-@include('gallery/detail_modal')
 @include('gallery/add_post_modal')
 @endsection
 
 @section('js')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.5/vue.js"></script>
-<script src="{{ asset('js/gallery/modals.js') }}"></script>
 @endsection
 
