@@ -1,14 +1,7 @@
 .gallery-row{
     width:350px !important;
     height:300px;
-    margin-bottom: 90px;
-    transition: width .2s, height .2s;
-    transition-timing-function: ease-in;
-    transition-delay: .4s;
-}
-.gallery-row:hover{
-    width:400px !important;
-    height:350px;
+    margin-bottom: 50px;
 }
 .gallery-img{
     border-radius: 15px;
