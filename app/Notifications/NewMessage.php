@@ -16,9 +16,9 @@ class NewMessage extends Notification
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($thread)
     {
-        //
+        $this->thread = $thread;
     }
 
     /**
@@ -29,7 +29,7 @@ class NewMessage extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail'];
+        return ['database'];
     }
 
     /**
@@ -55,8 +55,9 @@ class NewMessage extends Notification
     public function toArray($notifiable)
     {
         return [
-            'who' => 'Bret Parrish',
-            'message' => 'You have a new message'
+            'from' => $this->thread->creator()->id,
+            'subject' => $this-> thread->subject,
+            'message' => 'You have received a new message!'
         ];
     }
 }
