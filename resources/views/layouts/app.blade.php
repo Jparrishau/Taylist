@@ -30,7 +30,7 @@
         ]); ?>
     </script>
 </head>
-<body style="min-width:391px !important;">
+<body style="min-width:599px !important;">
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container-fluid" style="margin:0 15px;">
@@ -84,18 +84,18 @@
                                     <i class="fa fa-bell fa-2x" aria-hidden="true"></i>
                                 </a>
                     
-                                <ul class="dropdown-menu" role="menu">
-                                @if(count(Auth::user()->unreadNotifications) > 0)
-                                    @foreach(Auth::user()->unreadNotifications as $notification)
-                                        <li>
-                                            <a href="#" style="padding: 30px 20px;" data-notif-id="{{$notification->id}}">
-                                                {{ $notification->data['message'] }}
-                                            </a>
-                                        </li>
-                                    @endforeach
-                                @else
-                                    <p style="padding: 30px 20px;">No new notifications.</p>
-                                @endif
+                                <ul class="dropdown-menu notification-menu" role="menu">
+                                    @if(count(Auth::user()->unreadNotifications) > 0)
+                                        @foreach(Auth::user()->unreadNotifications as $notification)
+                                            <li>
+                                                <a href="#" style="padding: 30px 20px;" data-notif-id="{{$notification->id}}">
+                                                    {{ $notification->data['message'] }}
+                                                </a>
+                                            </li>
+                                        @endforeach
+                                    @else
+                                        <p style="padding: 30px 20px;">No new notifications.</p>
+                                    @endif
                                 </ul>
                             </li>
                         @endif
@@ -114,7 +114,7 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                            <a href="{{route('messages')}}">
+                                            <a href="{{ route('messages') }}">
                                                <i class="fa fa-comments" aria-hidden="true"></i> Messages
                                             </a>
                                     </li>
@@ -150,7 +150,6 @@
     src="https://code.jquery.com/jquery-3.1.1.js"
     integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
     crossorigin="anonymous"></script>
-
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     @yield('js')
