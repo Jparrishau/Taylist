@@ -2,14 +2,14 @@
 <div id="postDetailModal-{{$post->id}}" class="details-modal fade">
   <!-- Modal content -->
   <div id="vueid" class="modal-content">
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
+    <div id="carousel-example-generic-{{$post->id}}" class="carousel slide" data-ride="carousel" data-interval="false">
     <!-- Indicators -->
     <ol class="carousel-indicators">
         @foreach($post->photos as $index => $photo)
           @if($index == 0 )
-            <li data-target="#carousel-example-generic" data-slide-to="{{$index}}" class="active" ></li>
+            <li data-target="#carousel-example-generic-{{$post->id}}" data-slide-to="{{$index}}" class="active"></li>
           @else
-            <li data-target="#carousel-example-generic" data-slide-to="{{$index}}" class=""></li>
+            <li data-target="#carousel-example-generic-{{$post->id}}" data-slide-to="{{$index}}"></li>
           @endif
        @endforeach
     </ol>
@@ -30,11 +30,11 @@
     </div>
   
     <!-- Controls -->
-    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <a class="left carousel-control" href="#carousel-example-generic-{{$post->id}}" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
     </a>
-    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <a class="right carousel-control" href="#carousel-example-generic-{{$post->id}}" role="button" data-slide="next">
       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
@@ -44,7 +44,7 @@
     <ul class="nav nav-tabs">
       <li class="active"><a data-toggle="tab" href="#detail_menu-{{$post->id}}"><i class="ti-menu-alt"></i> <b>DETAILS</b></a></li>
       <li><a data-toggle="tab" href="#question_menu-{{$post->id}}"><i class="ti-help"></i> <b>QUESTIONS</b></a></li>
-      <li><a data-toggle="tab" href="#menu2-{{$post->id}}"><i class="ti-bar-chart-alt"></i> <b>MENU</b></a></li>
+      <li><a data-toggle="tab" href="#loc-{{$post->id}}"><i class="ti-bar-chart-alt"></i> <b>CONTACT</b></a></li>
     </ul>
 
     <div class="tab-content">
@@ -67,9 +67,10 @@
                 <i class="ti-help icon-fw"></i> Ask a Question
             </a>
         </div>
-      <div id="menu2-{{$post->id}}" class="tab-pane fade">
-        <h3>Menu 2</h3>
-        <p>Some content in menu 2.</p>
+      <div id="loc-{{$post->id}}" class="tab-pane fade">
+        <h3>Contact</h3>
+        <p><b>Email:</b> Jparrishau&commat;gmail.com</p>
+        <p><b>Cell:</b> 334-796-2191</p>
       </div>
     </div>
   </div>
