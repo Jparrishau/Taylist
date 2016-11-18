@@ -15,22 +15,21 @@
 .textarea-container{
     height: 100%;
     width: 100%;
-    background-color: whitesmoke;
     margin-top: 2px;
     
-}
-.message-text-area{
-    width:100%;
-    resize: none;
 }
 .message-submit-btn{
     float:right;
     margin-top:5px;
 }
-.message{
-    height:50px;
+.message-text-area{
+    width:100%;
+    resize: none;
+}
+.message-text{
+    height:70px;
     width: 100%;
-    padding: 10px;
+    padding: 20px;
     margin-bottom:15px;
     border-radius:5px;
     color: white;
