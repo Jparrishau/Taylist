@@ -2,7 +2,12 @@
     color: #333;
     background-color: #fff;
     border-color: #d3e0e9;
-    
+}
 .navbar-default {
     background-color: #fff;
     border-color: #d3e0e9;
+}
+.notification-menu{
+    max-height: 300px;
+    overflow-y: auto;
+}
