@@ -28,7 +28,7 @@ class MessagesController extends Controller
 
         // All threads, ignore deleted/archived participants
         $threads = Thread::getAllLatest()->get();
-        
+
         // All threads that user is participating in
         // $threads = Thread::forUser($currentUserId)->latest('updated_at')->get();
 
@@ -44,7 +44,7 @@ class MessagesController extends Controller
      * @param $id
      * @return mixed
      */
-    public function getThreadById($id)
+    public function show($id)
     {
         try {
             $thread = Thread::findOrFail($id);
@@ -64,34 +64,6 @@ class MessagesController extends Controller
         $thread->markAsRead($userId);
 
         return compact('thread', 'users');
-    }
-    
-    
-    /**
-     * Shows a message thread.
-     *
-     * @param $id
-     * @return mixed
-     */
-    public function getMessagesByThreadId($id)
-    {
-        $messages = Message::where('thread_id', $id)->get();
-
-        return $messages;
-    }
-    /**
-     * Shows a message thread.
-     *
-     * @param $id
-     * @return mixed
-     */
-    public function getThreadsByCurrentUser()
-    {
-        $currentUserId = Auth::user()->id;
-        
-        $threads = Thread::forUser($currentUserId)->latest('updated_at')->get();
-        
-        return compact('threads');
     }
 
     /**
