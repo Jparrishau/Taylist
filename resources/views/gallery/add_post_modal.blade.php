@@ -38,7 +38,7 @@
         <div class="form-group">
           <label for="photo-upload" class="col-md-4 control-label">Upload Photos</label>
             <div class="col-md-6">
-              <input id="photo-upload" type="file" name="image"/>
+              <input id="photo-upload" type="file" name="image" required/>
             </div>
         </div>
     
