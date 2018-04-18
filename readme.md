@@ -3,3 +3,6 @@ A web platform for buying and selling goods locally. Built with the [Laravel](ht
 
 
 By [Taylor Parrish](http://JosephTaylorParrish.com)
+
+
+<img src="https://github.com/Jparrishau/Taylist/blob/master/taylorslist.png" width="800" height="400">
